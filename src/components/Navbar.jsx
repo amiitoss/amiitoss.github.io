@@ -65,12 +65,12 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="/resume.pdf"
+              href="https://www.linkedin.com/in/amit-malagoudanavar"
               className="btn btn-primary navbar__cta"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Resume ↗
+              LinkedIn ↗
             </a>
           </li>
         </ul>
