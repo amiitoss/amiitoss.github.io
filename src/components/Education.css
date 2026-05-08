@@ -1,0 +1,102 @@
+.education-section {
+  padding-top: 0;
+}
+
+.edu__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.edu__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.25rem !important;
+}
+
+.edu__left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.edu__institution-icon {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(109, 40, 217, 0.12);
+  border: 1px solid rgba(109, 40, 217, 0.2);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.edu__institution {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
+
+.edu__degree {
+  font-size: 0.875rem;
+  color: var(--purple-soft);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.edu__meta {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.edu__period,
+.edu__cgpa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.edu__period {
+  color: var(--text-muted);
+}
+
+.edu__cgpa {
+  color: var(--accent-amber);
+}
+
+.edu__cgpa svg {
+  fill: var(--accent-amber);
+}
+
+.edu__coursework {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+}
+
+.edu__coursework-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.edu__courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .edu__left { flex-direction: column; }
+  .edu__card { padding: 1.5rem !important; }
+}

@@ -1,0 +1,273 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 7rem 0 5rem;
+}
+
+/* Particle canvas */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient blobs */
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__blob--1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.18) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  animation: blobFloat 12s ease-in-out infinite;
+}
+
+.hero__blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+  bottom: 0;
+  left: -100px;
+  animation: blobFloat 16s ease-in-out infinite reverse;
+}
+
+.hero__blob--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation: blobFloat 20s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 30px) scale(0.97); }
+}
+
+/* Content */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Badge */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 1.5rem;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+.hero__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.05); }
+}
+
+/* Name */
+.hero__name {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.hero__name-highlight {
+  background: linear-gradient(135deg, var(--purple-light) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typed role */
+.hero__role {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  min-height: 2rem;
+}
+
+.hero__role-typed {
+  font-family: var(--font-mono);
+  color: var(--purple-soft);
+  font-weight: 600;
+}
+
+.hero__cursor {
+  font-family: var(--font-mono);
+  color: var(--purple-light);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Tagline */
+.hero__tagline {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+/* Tech chips */
+.hero__tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+
+.hero__tech-chip {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(109, 40, 217, 0.12);
+  border: 1px solid rgba(109, 40, 217, 0.2);
+  color: var(--purple-soft);
+  transition: var(--transition-fast);
+}
+
+.hero__tech-chip:hover {
+  background: rgba(109, 40, 217, 0.22);
+  border-color: rgba(109, 40, 217, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Action buttons */
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Social links */
+.hero__social {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.hero__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.hero__social-link:hover {
+  color: var(--purple-light);
+  border-color: var(--border-glow);
+  background: rgba(109, 40, 217, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(109, 40, 217, 0.2);
+}
+
+/* Scroll indicator */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: scrollBounce 2.5s ease-in-out infinite;
+}
+
+.hero__scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid var(--text-muted);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.hero__scroll-wheel {
+  width: 3px;
+  height: 7px;
+  background: var(--purple-light);
+  border-radius: 3px;
+  animation: wheelScroll 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+  50%       { transform: translateX(-50%) translateY(6px); opacity: 1; }
+}
+
+@keyframes wheelScroll {
+  0%        { transform: translateY(0); opacity: 1; }
+  80%, 100% { transform: translateY(14px); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .hero__actions { flex-direction: column; align-items: center; }
+  .hero__actions .btn { width: 100%; max-width: 260px; justify-content: center; }
+  .hero__scroll-indicator { display: none; }
+}
